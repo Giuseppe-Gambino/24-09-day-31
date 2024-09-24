@@ -44,11 +44,8 @@ const minuts = document.getElementById("minuts");
 let time = sessionStorage.getItem("time") ? parseInt(sessionStorage.getItem("time")) : 0;
 let timeMinut = sessionStorage.getItem("timeMinut") ? parseInt(sessionStorage.getItem("timeMinut")) : 0;
 
-// function go() {
-//   time++;
-//   sessionStorage.setItem("time", time);
-//   seconds.innerText = time;
-// }
+seconds.innerText = time;
+minuts.innerText = timeMinut;
 
 function go() {
   if (time < 60) {
@@ -58,21 +55,12 @@ function go() {
   } else {
     time = 0;
     sessionStorage.setItem("time", time);
+    seconds.innerText = time;
+
     timeMinut++;
     sessionStorage.setItem("timeMinut", timeMinut);
     minuts.innerText = timeMinut;
   }
 }
-
-// function go() {
-//   if (seconds.innerText < 60) {
-//     seconds.innerText++;
-//     sessionStorage.setItem("seconds", seconds.innerText);
-//   } else {
-//     seconds.innerText = 0;
-//     minuts.innerText++;
-//     sessionStorage.setItem("seconds", minuts.innerText);
-//   }
-// }
 
 setInterval(go, 1000);

@@ -45,7 +45,6 @@ function go() {
   if (seconds.innerText < 60) {
     seconds.innerText++;
     sessionStorage.setItem("seconds", seconds.innerText);
-    const secondsSess = setInterval.getItem("secondsSess");
   } else {
     seconds.innerText = 0;
     minuts.innerText++;
